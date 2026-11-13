@@ -1,0 +1,49 @@
+/* ---- app vera: lo schermo è la finestra ---- */
+html,body{margin:0;height:100%;background:var(--base);font-family:var(--font);color:var(--ink)}
+.schermo{height:100dvh;border-radius:0;padding-top:calc(env(safe-area-inset-top) + 8px);overflow:clip}
+.sheet{overscroll-behavior:contain}
+.basso{padding-bottom:calc(16px + env(safe-area-inset-bottom));height:calc(78px + env(safe-area-inset-bottom))}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+/* le barre entrano solo al primo disegno */
+.barra{animation:none;border:0;text-align:left}
+.anima .barra{animation:entra 520ms cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--k)*45ms + 120ms)}
+.barra.te{border-top-right-radius:3px;border-bottom-right-radius:3px}
+.cella.fuori{background:repeating-linear-gradient(135deg,var(--err-soft) 0 6px,transparent 6px 12px)}
+.cam.fuori b{color:var(--err)}
+.gg.fest b{box-shadow:inset 0 -3px 0 var(--we-ink)}
+.fresco.arancio .pt{background:#d98a1a;box-shadow:0 0 0 3px rgba(217,138,26,.18)}
+.fresco.arancio{color:var(--att-ink)}
+.fresco.rosso .pt{background:var(--err);box-shadow:0 0 0 3px var(--err-soft)}
+.fresco.rosso{color:var(--err);font-weight:600}
+.ricorda{margin:8px 0 0;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:12px;background:var(--att-bg);color:var(--att-ink);font:600 12.5px/1.3 var(--font);border:0;width:100%;text-align:left}
+.strutture button,.seg4 button{all:unset;height:36px;border-radius:12px;display:grid;place-items:center;font:600 13.5px/1 var(--font);color:var(--ink-2);cursor:pointer}
+.seg4 button{height:34px;border-radius:10px;font-size:13px}
+.strutture button.on{background:var(--accent);color:var(--on-accent);box-shadow:0 4px 14px var(--conf-glow)}
+.seg4 button.on{background:var(--surf-pieno);color:var(--accent);box-shadow:0 2px 8px rgba(0,0,0,.12)}
+[data-tema="scuro"] .seg4 button.on{background:var(--accent);color:var(--on-accent)}
+.voce{border:0;background:none;cursor:pointer}
+.ch{cursor:pointer}
+.ch[disabled]{cursor:not-allowed}
+.mini .g7 button{all:unset;height:30px;display:grid;place-items:center;cursor:pointer}
+.mini .g7 button[disabled]{cursor:default;opacity:.35}
+input.input{width:100%;font:inherit;color:var(--ink);outline:none}
+input.input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.cerca .box input{all:unset;display:block;font:650 16px/1.2 var(--font);margin-top:4px;width:100%;color:var(--ink)}
+.esito.ko{background:var(--err-soft);color:var(--err)}
+.esito.ko .ico{background:var(--err)}
+.esito.neutro{background:var(--accent-soft);color:var(--accent-2)}
+.vuoto{flex:1;display:flex;flex-direction:column;justify-content:center;gap:16px;padding:32px 24px 48px}
+.vuoto h2{font:700 28px/1.15 var(--font);letter-spacing:-.02em}
+.vuoto p{color:var(--ink-2);line-height:1.5}
+.vuoto ol{color:var(--ink-2);line-height:1.6;padding-left:20px}
+.toast{position:fixed;left:16px;right:16px;bottom:calc(104px + env(safe-area-inset-bottom));z-index:50;padding:14px 16px;border-radius:16px;background:var(--ink);color:var(--base);font:600 14px/1.35 var(--font);box-shadow:var(--ombra);opacity:0;transform:translateY(12px);transition:opacity 200ms,transform 200ms;pointer-events:none}
+.toast.su{opacity:1;transform:none}
+.risultati{margin-top:12px;max-height:50vh;overflow:auto}
+.risultati button{all:unset;display:flex;flex-direction:column;gap:3px;width:100%;box-sizing:border-box;padding:12px 4px;border-bottom:1px solid var(--line);cursor:pointer}
+.risultati b{font:650 15px/1.2 var(--font)}
+.risultati span{font-size:13px;color:var(--ink-3)}
+.stato-blocco{font-size:12px;font-weight:600;color:var(--ink-3);margin-top:4px;display:block}
+.stato-blocco.da{color:var(--att-ink)}
+.corpo{padding-bottom:150px}
+.piede{bottom:calc(78px + env(safe-area-inset-bottom))}
