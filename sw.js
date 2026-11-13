@@ -1,6 +1,6 @@
 /* Foresterie in tasca: tiene l'app in memoria per usarla senza rete. Cambiare VERSIONE a ogni pubblicazione. */
-const VERSIONE = "fit-1";
-const FILE = ["./", "index.html", "app.js", "logica.js", "memoria.js", "manifest.webmanifest",
+const VERSIONE = "fit-2";
+const FILE = ["./", "index.html", "app.js", "installa.js", "logica.js", "memoria.js", "manifest.webmanifest",
   "icone/icona-192.png", "icone/icona-512.png", "icone/icona-maskable-512.png"];
 self.addEventListener("install", e => e.waitUntil(caches.open(VERSIONE).then(c => c.addAll(FILE)).then(() => self.skipWaiting())));
 self.addEventListener("activate", e => e.waitUntil(
